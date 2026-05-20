@@ -1,0 +1,29 @@
+
+> shiftmaker@0.0.0 electron:build
+> xattr -cr . && vite build && electron-builder
+
+vite v7.3.1 building client environment for production...
+transforming...
+✓ 2083 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                     0.46 kB │ gzip:   0.29 kB
+dist/assets/index-COpqQPiU.css      3.14 kB │ gzip:   0.99 kB
+dist/assets/index-CPSj0vAi.js   1,089.84 kB │ gzip: 307.95 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1.51s
+  • electron-builder  version=26.4.0 os=25.1.0
+  • loaded configuration  file=package.json ("build" field)
+  • executing @electron/rebuild  electronVersion=40.0.0 arch=arm64 buildFromSource=false workspaceRoot=/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER projectDir=./ appDir=./
+  • installing native dependencies  arch=arm64
+  • completed installing native dependencies
+  • packaging       platform=darwin arch=arm64 electron=40.0.0 appOutDir=dist_electron/mac-arm64
+  • falling back to ad-hoc signature for macOS application code signing
+  • signing         file=dist_electron/mac-arm64/ShiftMaker.app platform=darwin type=distribution identityName=- identityHash=none provisioningProfile=none
+  • skipped macOS notarization  reason=`notarize` options were unable to be generated
+  • building        target=DMG arch=arm64 file=dist_electron/ShiftMaker-0.0.0-arm64.dmg
+  • building block map  blockMapFile=dist_electron/ShiftMaker-0.0.0-arm64.dmg.blockmap

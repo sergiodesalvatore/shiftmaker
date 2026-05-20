@@ -1,0 +1,3475 @@
+{
+  "shifts": [
+    {
+      "id": "1-0-dayname",
+      "day": "1",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "V",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "1-0-13-12prwqa8l",
+      "day": "1",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "INV",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "1-0-14-9ib8kse51",
+      "day": "1",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "INV",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "1-0-15-fbtho89b0",
+      "day": "1",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "BUR",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "1-0-16-4howqkv7g",
+      "day": "1",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "DON PAS BON",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "2-1-dayname",
+      "day": "2",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "S",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "2-1-14-lelna7j0y",
+      "day": "2",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "BUR",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "2-1-15-pm2qx3569",
+      "day": "2",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "INV",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "2-1-16-v92eowspm",
+      "day": "2",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "DON PAS BON",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "3-2-dayname",
+      "day": "3",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "D",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "3-2-13-7m4sjl83j",
+      "day": "3",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "INV",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "3-2-14-9dywmsmmq",
+      "day": "3",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "INV",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "3-2-15-4lpb8849q",
+      "day": "3",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "BUR",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "3-2-16-acf4oxmou",
+      "day": "3",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "DON PAS BON",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "4-3-dayname",
+      "day": "4",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "L",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "4-3-2-uv7zncp8r",
+      "day": "4",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "OGG",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "4-3-3-piqg6248f",
+      "day": "4",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "RUS",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "4-3-4-if0hmnpa3",
+      "day": "4",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "FUM",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "4-3-6-648i92v4t",
+      "day": "4",
+      "type": "DH_08-14",
+      "label": "DH",
+      "content": "DON",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "4-3-7-vj1aggr02",
+      "day": "4",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "BON",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "4-3-13-cjfe3mozs",
+      "day": "4",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "LAM INV",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "4-3-14-seibq31oo",
+      "day": "4",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "PAS",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "4-3-15-l31jcenlp",
+      "day": "4",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "SAL",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "4-3-16-f05bvizl3",
+      "day": "4",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "DON NO POM",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "5-4-dayname",
+      "day": "5",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "MA",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "5-4-2-iges9zm1u",
+      "day": "5",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "SES BON",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "5-4-3-ercn7hq65",
+      "day": "5",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "RUZ",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "5-4-4-v727e3vr3",
+      "day": "5",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "SAL",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "5-4-6-308v1u9cj",
+      "day": "5",
+      "type": "DH_08-14",
+      "label": "DH",
+      "content": "MAG SAN",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "5-4-8-0de9rhz0q",
+      "day": "5",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "COS RUS",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "5-4-8-6j8sg1cq5",
+      "day": "5",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "OGG DES",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "5-4-13-akxjow6rd",
+      "day": "5",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "PAS INV",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "5-4-14-c8j2a20u8",
+      "day": "5",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "FUM",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "5-4-15-9bqdilpu5",
+      "day": "5",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "PAS",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "5-4-16-86j59dk6b",
+      "day": "5",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "BUR E FUM NO MAT",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "6-5-dayname",
+      "day": "6",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "M",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "6-5-2-84zdigc21",
+      "day": "6",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "SAL",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "6-5-3-lzpo52qnn",
+      "day": "6",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "MAS",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "6-5-4-8616yqjac",
+      "day": "6",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "SES",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "6-5-6-0i6qm4g4n",
+      "day": "6",
+      "type": "DH_08-14",
+      "label": "DH",
+      "content": "PAS",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "6-5-7-2x152ypw4",
+      "day": "6",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "DON LAM",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "6-5-8-zhhfx3asw",
+      "day": "6",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "COS RUS",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "6-5-8-sd6i3tcij",
+      "day": "6",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "OGG INV",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "6-5-13-s7aido5nk",
+      "day": "6",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "RUZ BUR",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "6-5-14-5kzlejkey",
+      "day": "6",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "MAG",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "6-5-15-9hrljz2pf",
+      "day": "6",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "DES",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "6-5-16-tcstch4fy",
+      "day": "6",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "SES NO POM",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "7-6-dayname",
+      "day": "7",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "G",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "7-6-2-4qa2abtlf",
+      "day": "7",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "LAM",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "7-6-3-l2ukoe6p3",
+      "day": "7",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "BUR",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "7-6-4-jl2vmkbjd",
+      "day": "7",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "RUS",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "7-6-6-t8pr0f1rz",
+      "day": "7",
+      "type": "DH_08-14",
+      "label": "DH",
+      "content": "SAL",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "7-6-7-81y1mpq03",
+      "day": "7",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "SAL",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "7-6-8-ctbdmptm3",
+      "day": "7",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "PAS DON",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "7-6-9-ha7p6dm3b",
+      "day": "7",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "RUZ BON",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "7-6-10-vkc0nrwt1",
+      "day": "7",
+      "type": "SALA_DS_08-14",
+      "label": "Sala DS",
+      "content": "MAS SAN",
+      "rawColumnIndex": 10
+    },
+    {
+      "id": "7-6-12-at9u2wuxf",
+      "day": "7",
+      "type": "SM_08-14",
+      "label": "SM",
+      "content": "FUM",
+      "rawColumnIndex": 12
+    },
+    {
+      "id": "7-6-13-hv4ojqe5t",
+      "day": "7",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "MAG INV",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "7-6-14-gjjho6kof",
+      "day": "7",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "BON",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "7-6-15-fewz9a4iv",
+      "day": "7",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "RUZ",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "7-6-16-3yuw5f9qg",
+      "day": "7",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "OGG SES DES BUR NO MAT",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "8-7-dayname",
+      "day": "8",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "V",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "8-7-2-1p5v4j6ez",
+      "day": "8",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "MAG INV",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "8-7-3-spp5flltc",
+      "day": "8",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "SAN",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "8-7-4-sl5ykjajb",
+      "day": "8",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "RUS",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "8-7-6-t0ku89yfh",
+      "day": "8",
+      "type": "DH_08-14",
+      "label": "DH",
+      "content": "BON",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "8-7-7-ffetxe2zp",
+      "day": "8",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "BON",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "8-7-8-zf4b6j6ds",
+      "day": "8",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "RUZ SPEC",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "8-7-8-x31q3x9cz",
+      "day": "8",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "DON BUR",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "8-7-9-zc21lr9f2",
+      "day": "8",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "PAS SPEC",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "8-7-9-254vqsvlx",
+      "day": "8",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "MAS LAM",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "8-7-13-9yik0m6ll",
+      "day": "8",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "FUM SAL",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "8-7-14-o9hdlzn8v",
+      "day": "8",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "MAS",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "8-7-15-wu77cwiyf",
+      "day": "8",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "PAS",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "8-7-16-cvao1a6mc",
+      "day": "8",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "OGG SES DES",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "9-8-dayname",
+      "day": "9",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "S",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "9-8-13-obh5k1bmb",
+      "day": "9",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "MAG",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "9-8-14-pd3u535oz",
+      "day": "9",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "MAG",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "9-8-15-5slqw94st",
+      "day": "9",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "DES",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "9-8-16-buyq2ws22",
+      "day": "9",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "SES BON",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "10-9-dayname",
+      "day": "10",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "D",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "10-9-13-gfke5x1nd",
+      "day": "10",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "DES",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "10-9-14-48x3q03jf",
+      "day": "10",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "DES",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "10-9-15-5qpyo42gy",
+      "day": "10",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "MAG",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "10-9-16-a0zk4b8yz",
+      "day": "10",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "BON",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "11-10-dayname",
+      "day": "11",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "L",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "11-10-2-ym8mfk9jx",
+      "day": "11",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "DON",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "11-10-3-3btr248zz",
+      "day": "11",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "SAL",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "11-10-4-32unmpujk",
+      "day": "11",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "LAM",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "11-10-5-ckk5sieb6",
+      "day": "11",
+      "type": "BALD_08-14",
+      "label": "Bald",
+      "content": "SAN SPEC",
+      "rawColumnIndex": 5
+    },
+    {
+      "id": "11-10-8-hxdpc1kuj",
+      "day": "11",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "MAG PAS",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "11-10-8-qzcfzd67t",
+      "day": "11",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "OGG FUM",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "11-10-13-2lc3rsfx7",
+      "day": "11",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "DES BON",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "11-10-14-r98390h1c",
+      "day": "11",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "MAS",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "11-10-16-onkuv8jpz",
+      "day": "11",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "RUZ (SES SP)",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "12-11-dayname",
+      "day": "12",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "MA",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "12-11-2-fmzovtvr6",
+      "day": "12",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "LAM BUR",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "12-11-3-f8931bjj9",
+      "day": "12",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "BON",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "12-11-4-4ic09lb39",
+      "day": "12",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "SAL",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "12-11-6-dmbvzsojl",
+      "day": "12",
+      "type": "DH_08-14",
+      "label": "DH",
+      "content": "MAG SAN",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "12-11-7-v3q2nscc0",
+      "day": "12",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "MAS",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "12-11-8-vm5qrb6lm",
+      "day": "12",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "COS RUS",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "12-11-8-lk7oqysmz",
+      "day": "12",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "SES DES",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "12-11-11-kuj320hi9",
+      "day": "12",
+      "type": "NORA_08-14",
+      "label": "Nora",
+      "content": "MAS",
+      "rawColumnIndex": 11
+    },
+    {
+      "id": "12-11-14-q0m2ynqqv",
+      "day": "12",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "DON",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "12-11-15-mvuxc801i",
+      "day": "12",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "FUM",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "12-11-16-cpmnubqba",
+      "day": "12",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "RUZ",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "13-12-dayname",
+      "day": "13",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "M",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "13-12-2-9b4ydtc6l",
+      "day": "13",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "INV",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "13-12-3-hafqio3t4",
+      "day": "13",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "MAS",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "13-12-4-aylqztw0g",
+      "day": "13",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "PAS",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "13-12-6-gfzogg0oi",
+      "day": "13",
+      "type": "DH_08-14",
+      "label": "DH",
+      "content": "SAL",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "13-12-8-greppqbvh",
+      "day": "13",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "COS RUS",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "13-12-8-i5lsi3h59",
+      "day": "13",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "OGG FUM",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "13-12-13-lhejjjyqv",
+      "day": "13",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "RUZ BON",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "13-12-14-6cazi1g4h",
+      "day": "13",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "DES",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "13-12-15-20gp7ubx3",
+      "day": "13",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "OGG",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "13-12-16-gzplfow6l",
+      "day": "13",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "(SES BLS)",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "14-13-dayname",
+      "day": "14",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "G",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "14-13-3-tkti84fxp",
+      "day": "14",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "FUM",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "14-13-4-gyk9mpe2j",
+      "day": "14",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "BUR",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "14-13-6-ffjiz63c8",
+      "day": "14",
+      "type": "DH_08-14",
+      "label": "DH",
+      "content": "MAS",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "14-13-7-9lunjqfik",
+      "day": "14",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "BON",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "14-13-8-kw3rx69s2",
+      "day": "14",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "OGG DES",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "14-13-12-ig9h5ehqh",
+      "day": "14",
+      "type": "SM_08-14",
+      "label": "SM",
+      "content": "PAS",
+      "rawColumnIndex": 12
+    },
+    {
+      "id": "14-13-13-ay1s8jfg3",
+      "day": "14",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "MAG LAM",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "14-13-14-nbvui7wxv",
+      "day": "14",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "SAL",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "14-13-15-wm7ya2n94",
+      "day": "14",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "DON",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "14-13-16-slhixoct7",
+      "day": "14",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "COS (RUZ SP)",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "15-14-dayname",
+      "day": "15",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "V",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "15-14-2-6rulbbq4y",
+      "day": "15",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "MAG DES",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "15-14-3-9k5y1urlo",
+      "day": "15",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "SAN",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "15-14-4-8yah27fni",
+      "day": "15",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "RUS",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "15-14-6-l1ga2i992",
+      "day": "15",
+      "type": "DH_08-14",
+      "label": "DH",
+      "content": "LAM",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "15-14-7-i0eex2hlf",
+      "day": "15",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "LAM",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "15-14-8-3pedr8683",
+      "day": "15",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "SES INV",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "15-14-8-auyeb3rrs",
+      "day": "15",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "PAS DON",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "15-14-9-hyjnpo794",
+      "day": "15",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "MAS FUM",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "15-14-9-87r83xfr4",
+      "day": "15",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "RUZ BON",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "15-14-13-v0n0p2gqd",
+      "day": "15",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "BUR SAL",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "15-14-14-qnrfxlh2v",
+      "day": "15",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "RUZ",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "15-14-15-bgpl6ogsg",
+      "day": "15",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "BON",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "15-14-16-1l3id8qfj",
+      "day": "15",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "COS OGG LAM DES NO POM",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "16-15-dayname",
+      "day": "16",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "S",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "16-15-13-hatj8qtmg",
+      "day": "16",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "SES",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "16-15-14-ng6i3t3a8",
+      "day": "16",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "SES",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "16-15-15-hv7o9f4so",
+      "day": "16",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "SAL",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "16-15-16-wulq14xgr",
+      "day": "16",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "LAM",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "17-16-dayname",
+      "day": "17",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "D",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "17-16-13-aj16f2k2w",
+      "day": "17",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "SAL",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "17-16-14-71d83cwp5",
+      "day": "17",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "SAL",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "17-16-15-lfgcqv7pa",
+      "day": "17",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "SES",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "18-17-dayname",
+      "day": "18",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "L",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "18-17-3-mft4r9h1y",
+      "day": "18",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "RUS",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "18-17-4-vuy0168w3",
+      "day": "18",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "INV",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "18-17-7-g1q5gsacl",
+      "day": "18",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "LAM",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "18-17-9-zd1si53cu",
+      "day": "18",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "DON BUR SAL",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "18-17-13-9ne7zzr5d",
+      "day": "18",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "PAS FUM",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "18-17-14-dnyy3x34o",
+      "day": "18",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "DON",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "18-17-15-mto8cx1d3",
+      "day": "18",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "SAL",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "18-17-16-mmrju9lnl",
+      "day": "18",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "MAS",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "19-18-dayname",
+      "day": "19",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "MA",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "19-18-2-wd5lbjn76",
+      "day": "19",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "LAM SAL",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "19-18-3-6uo9dvl1j",
+      "day": "19",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "RUZ",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "19-18-4-5bgi34o9h",
+      "day": "19",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "DON",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "19-18-7-whjxphk5n",
+      "day": "19",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "FUM",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "19-18-8-xm28u0h5b",
+      "day": "19",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "COS RUS",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "19-18-8-9d0ra0kqv",
+      "day": "19",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "SES DES",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "19-18-9-hbdjrwv1u",
+      "day": "19",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "PAS BON",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "19-18-13-39x3752bh",
+      "day": "19",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "OGG INV",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "19-18-14-labz67za5",
+      "day": "19",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "BON",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "19-18-15-0d2700pzk",
+      "day": "19",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "PAS",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "19-18-16-lkpsbwu00",
+      "day": "19",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "MAS",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "20-19-dayname",
+      "day": "20",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "M",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "20-19-3-x1qjw23ip",
+      "day": "20",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "INV",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "20-19-4-qo8lomun6",
+      "day": "20",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "BON",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "20-19-7-qrzov59g9",
+      "day": "20",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "BUR",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "20-19-13-yqso5eqv0",
+      "day": "20",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "RUZ SAL",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "20-19-14-f5lslla91",
+      "day": "20",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "MAG",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "20-19-15-9rwve4pet",
+      "day": "20",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "DES",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "20-19-16-q4elst7op",
+      "day": "20",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "MAS OGG  SES NO POM",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "21-20-dayname",
+      "day": "21",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "G",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "21-20-2-39sjyer7k",
+      "day": "21",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "DES",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "21-20-3-qfgmuoczz",
+      "day": "21",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "FUM",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "21-20-4-3dw9ot5vu",
+      "day": "21",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "BUR",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "21-20-6-h6xa858io",
+      "day": "21",
+      "type": "DH_08-14",
+      "label": "DH",
+      "content": "SES",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "21-20-7-cyru3ihgs",
+      "day": "21",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "BON",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "21-20-8-e7v5b0h1e",
+      "day": "21",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "MAS SAL",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "21-20-9-ao5kno15k",
+      "day": "21",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "DON INV",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "21-20-12-4s88ed61q",
+      "day": "21",
+      "type": "SM_08-14",
+      "label": "SM",
+      "content": "PAS",
+      "rawColumnIndex": 12
+    },
+    {
+      "id": "21-20-13-pz8u1tvgl",
+      "day": "21",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "MAG LAM",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "21-20-14-ammtngg93",
+      "day": "21",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "INV",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "21-20-15-tnpmgd3t4",
+      "day": "21",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "DON",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "21-20-16-c892hothz",
+      "day": "21",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "OGG (RUZ SP)",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "22-21-dayname",
+      "day": "22",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "V",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "22-21-3-ioztms4nz",
+      "day": "22",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "SAN",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "22-21-4-e0iz8jnhr",
+      "day": "22",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "LAM",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "22-21-9-ranpboqo3",
+      "day": "22",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "DES FUM",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "22-21-9-hpp7ad2ld",
+      "day": "22",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "MAS SPEC",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "22-21-14-8sxgn2vgr",
+      "day": "22",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "DES",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "22-21-15-i6xap15vb",
+      "day": "22",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "MAS",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "22-21-16-g9cb6bq7h",
+      "day": "22",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "OGG",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "23-22-dayname",
+      "day": "23",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "S",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "23-22-13-xl4eerutf",
+      "day": "23",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "OGG",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "23-22-14-44x6ygbss",
+      "day": "23",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "OGG",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "23-22-15-hh1izcimh",
+      "day": "23",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "FUM",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "23-22-16-4sclds2d3",
+      "day": "23",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "SES LAM",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "24-23-dayname",
+      "day": "24",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "D",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "24-23-13-qlsq2mbkt",
+      "day": "24",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "FUM",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "24-23-14-a3i6pw38w",
+      "day": "24",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "FUM",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "24-23-15-kv8bp87dt",
+      "day": "24",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "OGG",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "24-23-16-1umx92u14",
+      "day": "24",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "SES",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "25-24-dayname",
+      "day": "25",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "L",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "25-24-2-dlerla0xn",
+      "day": "25",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "FUM",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "25-24-3-wkoih5ftw",
+      "day": "25",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "DON",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "25-24-4-bh2cudpq3",
+      "day": "25",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "RUS",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "25-24-5-t1n0xmwv5",
+      "day": "25",
+      "type": "BALD_08-14",
+      "label": "Bald",
+      "content": "SAN SPEC",
+      "rawColumnIndex": 5
+    },
+    {
+      "id": "25-24-6-j4vg5tg31",
+      "day": "25",
+      "type": "DH_08-14",
+      "label": "DH",
+      "content": "LAM",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "25-24-7-luzzg6zrm",
+      "day": "25",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "LAM",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "25-24-8-ho231xua7",
+      "day": "25",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "MAG INV",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "25-24-8-r6l1g6g2j",
+      "day": "25",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "RUZ BON",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "25-24-9-z9sr1iidx",
+      "day": "25",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "MAS PAS",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "25-24-13-tfvt558dc",
+      "day": "25",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "OGG DES",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "25-24-14-7t0icbg7m",
+      "day": "25",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "PAS",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "25-24-15-s3i72m0jt",
+      "day": "25",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "MAS",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "25-24-16-t7q804f10",
+      "day": "25",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "SES SAL (BUR VF)",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "26-25-dayname",
+      "day": "26",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "MA",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "26-25-2-oom7spshx",
+      "day": "26",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "OGG LAM",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "26-25-3-5ct6shlse",
+      "day": "26",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "RUZ",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "26-25-4-3t3jxfnjh",
+      "day": "26",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "BON",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "26-25-6-oy7hnopul",
+      "day": "26",
+      "type": "DH_08-14",
+      "label": "DH",
+      "content": "MAG SAN",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "26-25-7-yrshcrbhg",
+      "day": "26",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "MAS",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "26-25-8-uiy8h5q6d",
+      "day": "26",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "COS RUS",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "26-25-8-xf2k5zejx",
+      "day": "26",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "SES FUM",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "26-25-9-7yemvk6zq",
+      "day": "26",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "DON SPEC",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "26-25-11-5okzt448s",
+      "day": "26",
+      "type": "NORA_08-14",
+      "label": "Nora",
+      "content": "MAS",
+      "rawColumnIndex": 11
+    },
+    {
+      "id": "26-25-13-y8y38acp8",
+      "day": "26",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "PAS INV",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "26-25-14-0eapbv66r",
+      "day": "26",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "DON",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "26-25-15-5i5u8mepu",
+      "day": "26",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "BON",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "26-25-16-c6i5duib8",
+      "day": "26",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "DES SAL (BUR VF)",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "27-26-dayname",
+      "day": "27",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "M",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "27-26-2-ghpg34eyn",
+      "day": "27",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "INV",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "27-26-3-ozlk9s6dy",
+      "day": "27",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "MAS",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "27-26-4-8ymz04aos",
+      "day": "27",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "LAM",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "27-26-6-10er0rm9n",
+      "day": "27",
+      "type": "DH_08-14",
+      "label": "DH",
+      "content": "PAS",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "27-26-7-72e7d78qj",
+      "day": "27",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "DON",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "27-26-8-cuz37e9jd",
+      "day": "27",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "COS RUS",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "27-26-8-5hxcwzwxq",
+      "day": "27",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "OGG FUM",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "27-26-9-dkmpkgas1",
+      "day": "27",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "MAG SES",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "27-26-9-trtil8i37",
+      "day": "27",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "SAN SPEC",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "27-26-13-9mwsp3c5w",
+      "day": "27",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "RUZ BON",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "27-26-14-k3mr0ulgd",
+      "day": "27",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "SES",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "27-26-15-4i6qmssgr",
+      "day": "27",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "INV",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "27-26-16-j3c2pdjdx",
+      "day": "27",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "DES SAL (BUR VF)",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "28-27-dayname",
+      "day": "28",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "G",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "28-27-2-51rhjiny8",
+      "day": "28",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "SES",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "28-27-3-4c7gu4mx9",
+      "day": "28",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "BON",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "28-27-4-1muw0rrdr",
+      "day": "28",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "RUZ",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "28-27-6-z9elibhzu",
+      "day": "28",
+      "type": "DH_08-14",
+      "label": "DH",
+      "content": "FUM",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "28-27-7-cxow01g30",
+      "day": "28",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "FUM",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "28-27-8-7s3igrght",
+      "day": "28",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "OGG INV",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "28-27-9-jdn2q525f",
+      "day": "28",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "BUR DON",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "28-27-10-0y379sy6c",
+      "day": "28",
+      "type": "SALA_DS_08-14",
+      "label": "Sala DS",
+      "content": "MAS SAN",
+      "rawColumnIndex": 10
+    },
+    {
+      "id": "28-27-12-ft015qs9m",
+      "day": "28",
+      "type": "SM_08-14",
+      "label": "SM",
+      "content": "PAS",
+      "rawColumnIndex": 12
+    },
+    {
+      "id": "28-27-13-u8dt08dsq",
+      "day": "28",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "MAG LAM",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "28-27-14-905rr2is8",
+      "day": "28",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "BUR",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "28-27-15-k0436j0cp",
+      "day": "28",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "FUM",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "28-27-16-ee5fehau5",
+      "day": "28",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "DES SAL",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "29-28-dayname",
+      "day": "29",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "V",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "29-28-2-s5hlghi7c",
+      "day": "29",
+      "type": "AMBULATORIO_08-14",
+      "label": "Ambulatorio Mattina",
+      "content": "MAG DON",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "29-28-3-kotzf0v7z",
+      "day": "29",
+      "type": "AMBULATORIO_14-19",
+      "label": "Ambulatorio Pom",
+      "content": "SAN",
+      "rawColumnIndex": 3
+    },
+    {
+      "id": "29-28-4-oes0ikz6m",
+      "day": "29",
+      "type": "REPARTO_08-14",
+      "label": "Reparto",
+      "content": "RUS",
+      "rawColumnIndex": 4
+    },
+    {
+      "id": "29-28-6-pszbp5rt5",
+      "day": "29",
+      "type": "DH_08-14",
+      "label": "DH",
+      "content": "LAM",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "29-28-7-ia7w98hu0",
+      "day": "29",
+      "type": "CONS_08-14",
+      "label": "Cons",
+      "content": "LAM",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "29-28-8-qb80zt5tk",
+      "day": "29",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "SES INV",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "29-28-8-3vtomaudk",
+      "day": "29",
+      "type": "SALA_OP_08-14",
+      "label": "Sala Op Mattina",
+      "content": "RUZ PAS",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "29-28-9-axsw7c1vt",
+      "day": "29",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "SES INV",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "29-28-9-thraz6s88",
+      "day": "29",
+      "type": "SALA_OP_14-19",
+      "label": "Sala Op Pom",
+      "content": "MAS SPEC",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "29-28-13-nnbeontyu",
+      "day": "29",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "BON",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "29-28-14-sfl4e2dd8",
+      "day": "29",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "MAS",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "29-28-15-z4rer8zi7",
+      "day": "29",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "SES",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "29-28-16-j93m1j6nm",
+      "day": "29",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "OGG FUM DES SAL (BUR VF)",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "30-29-dayname",
+      "day": "30",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "S",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "30-29-13-3nxb53063",
+      "day": "30",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "BON",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "30-29-14-6zivs9ig9",
+      "day": "30",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "BON",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "30-29-15-lfm3sflia",
+      "day": "30",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "RUZ",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "30-29-16-ehcfv6m0p",
+      "day": "30",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "OGG SES FUM DES",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "31-30-dayname",
+      "day": "31",
+      "type": "DAY_NAME",
+      "label": "Day Name",
+      "content": "D",
+      "rawColumnIndex": 1
+    },
+    {
+      "id": "31-30-13-yg3ox9k5g",
+      "day": "31",
+      "type": "PS_08-14",
+      "label": "PS",
+      "content": "RUZ",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "31-30-14-lagjcz5sg",
+      "day": "31",
+      "type": "PS_CONT_14-20",
+      "label": "PS Cont",
+      "content": "RUZ",
+      "rawColumnIndex": 14
+    },
+    {
+      "id": "31-30-15-q51pkq1ln",
+      "day": "31",
+      "type": "REP_2",
+      "label": "2 Rep",
+      "content": "BON",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "31-30-16-hyiiyeo2x",
+      "day": "31",
+      "type": "FERIE",
+      "label": "Ferie/Altro",
+      "content": "OGG SES FUM",
+      "rawColumnIndex": 16
+    },
+    {
+      "id": "4-9-lkqzsprqc",
+      "day": "4",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "MAS",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "4-9-gtzhuunzu",
+      "day": "4",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "PAS",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "4-8-9jojp9vyc",
+      "day": "4",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "RUZ",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "4-8-z0nstsp8d",
+      "day": "4",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "MAG",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "4-8-aufptwycb",
+      "day": "4",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "SES",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "4-8-sjjppmjt7",
+      "day": "4",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "DES",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "4-8-udqezcuph",
+      "day": "4",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "BUR",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "5-9-22l4tou4h",
+      "day": "5",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "BUR",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "5-9-vueisqdoa",
+      "day": "5",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "DON",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "5-7-9fadicdgc",
+      "day": "5",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "MAS",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "5-7-h1de9kjg1",
+      "day": "5",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "LAM",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "6-9-qbpp72pm6",
+      "day": "6",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "MAG",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "6-9-6z4xem9tu",
+      "day": "6",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "DES",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "6-9-y1kx6cm0n",
+      "day": "6",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "SAN",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "6-9-xoexgf6so",
+      "day": "6",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "BON",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "6-9-t6vp252i2",
+      "day": "6",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "FUM",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "11-9-75bxenuuc",
+      "day": "11",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "MAS",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "11-9-mbt5eas0j",
+      "day": "11",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "BUR",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "11-15-dlkszmxyx",
+      "day": "11",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "BUR",
+      "rawColumnIndex": 15
+    },
+    {
+      "id": "11-7-z0w1zhov1",
+      "day": "11",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "INV",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "12-13-cvsfhpfse",
+      "day": "12",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "PAS",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "12-13-ca36z7w82",
+      "day": "12",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "OGG",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "12-9-2gd8d8hwv",
+      "day": "12",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "DON",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "12-9-ne8vq5wij",
+      "day": "12",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "FUM",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "12-9-rejvs5vlj",
+      "day": "12",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "INV",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "13-7-p1uqctot0",
+      "day": "13",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "DON",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "13-7-77t80znum",
+      "day": "13",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "BUR",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "14-9-ca71jcatj",
+      "day": "14",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "DON",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "14-9-bwwfto8ji",
+      "day": "14",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "SAL",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "14-9-2lbxtsv5b",
+      "day": "14",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "INV",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "19-6-nw6b2laya",
+      "day": "19",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "BUR",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "19-6-g2j11u0sc",
+      "day": "19",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "MAG",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "18-8-51qr7qs3j",
+      "day": "18",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "MAG",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "18-8-h74bj0g9j",
+      "day": "18",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "RUZ",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "18-8-9scc7ucdi",
+      "day": "18",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "OGG",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "18-8-0kkuy8wuo",
+      "day": "18",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "SAN",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "20-8-3uj8tk12o",
+      "day": "20",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "COS",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "20-8-bo3qixe2a",
+      "day": "20",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "RUS",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "20-8-r4njaek1g",
+      "day": "20",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "SES",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "20-8-tadui21y9",
+      "day": "20",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "DES",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "14-2-e0gk1eiav",
+      "day": "14",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "SES",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "20-2-8anpqmfaw",
+      "day": "20",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "DON",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "20-6-91hbammqq",
+      "day": "20",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "PAS",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "20-9-crkrwrgio",
+      "day": "20",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "MAG",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "20-9-pqzmxjd2q",
+      "day": "20",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "SAN",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "20-9-61hawt74y",
+      "day": "20",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "LAM",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "20-9-6p6xagtdj",
+      "day": "20",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "FUM",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "18-2-gkrllg3kb",
+      "day": "18",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "SES",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "18-6-ad9iyxs1p",
+      "day": "18",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "BON",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "22-6-td4f1uasq",
+      "day": "22",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "DON",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "22-2-0lfi82ssp",
+      "day": "22",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "MAG",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "22-2-ubvro82tl",
+      "day": "22",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "BON",
+      "rawColumnIndex": 2
+    },
+    {
+      "id": "22-13-s67kapcaz",
+      "day": "22",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "SAL",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "22-13-ofhxc7w6f",
+      "day": "22",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "PAS",
+      "rawColumnIndex": 13
+    },
+    {
+      "id": "11-6-jsculbaj7",
+      "day": "11",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "INV",
+      "rawColumnIndex": 6
+    },
+    {
+      "id": "22-8-ql7vm8tko",
+      "day": "22",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "SES",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "22-8-n4ah3c99b",
+      "day": "22",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "INV",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "22-8-gv1c7bvq8",
+      "day": "22",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "RUZ",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "22-8-6qloomdg6",
+      "day": "22",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "BUR",
+      "rawColumnIndex": 8
+    },
+    {
+      "id": "22-7-j1x4ytop9",
+      "day": "22",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "DON",
+      "rawColumnIndex": 7
+    },
+    {
+      "id": "13-9-75890r2yd",
+      "day": "13",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "MAG",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "13-9-iorr8n9u9",
+      "day": "13",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "OGG",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "13-9-s1w82zx76",
+      "day": "13",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "SAN",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "13-9-wl5a21wvp",
+      "day": "13",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "LAM",
+      "rawColumnIndex": 9
+    },
+    {
+      "id": "2-13-en2tjvap8",
+      "day": "2",
+      "type": "MANUAL_SEL",
+      "label": "Manual Selection",
+      "content": "LAM",
+      "rawColumnIndex": 13
+    }
+  ],
+  "people": [
+    "BLS",
+    "BON",
+    "BUR",
+    "COS",
+    "DES",
+    "DON",
+    "FUM",
+    "INV",
+    "LAM",
+    "MAG",
+    "MAS",
+    "MAT",
+    "NO",
+    "OGG",
+    "PAS",
+    "POM",
+    "RUS",
+    "RUZ",
+    "SAL",
+    "SAN",
+    "SES",
+    "SP",
+    "SPEC",
+    "VF"
+  ],
+  "constraints": {
+    "BUR": {
+      "recurring": [
+        {
+          "day": "V",
+          "slot": "PM",
+          "id": 1776628510792.1953
+        }
+      ],
+      "unavailable": [
+        {
+          "day": 25,
+          "slot": "ALL",
+          "id": 1776628741642
+        },
+        {
+          "day": 26,
+          "slot": "ALL",
+          "id": 1776628741950
+        },
+        {
+          "day": 27,
+          "slot": "ALL",
+          "id": 1776628742267
+        },
+        {
+          "day": 29,
+          "slot": "ALL",
+          "id": 1776628745792
+        },
+        {
+          "day": 5,
+          "slot": "AM",
+          "id": 1776628753338
+        },
+        {
+          "day": 7,
+          "slot": "AM",
+          "id": 1776628755221
+        }
+      ],
+      "preferences": []
+    },
+    "BON": {
+      "recurring": [
+        {
+          "day": "L",
+          "slot": "PM",
+          "id": 1776628510793.356
+        },
+        {
+          "day": "ME",
+          "slot": "PM",
+          "id": 1776628510793.9246
+        }
+      ],
+      "unavailable": [
+        {
+          "day": 1,
+          "slot": "ALL",
+          "id": 1776628898935
+        },
+        {
+          "day": 2,
+          "slot": "ALL",
+          "id": 1776628899427
+        },
+        {
+          "day": 3,
+          "slot": "ALL",
+          "id": 1776628899794
+        },
+        {
+          "day": 9,
+          "slot": "ALL",
+          "id": 1776628906268
+        },
+        {
+          "day": 10,
+          "slot": "ALL",
+          "id": 1776628906569
+        }
+      ],
+      "preferences": []
+    },
+    "INV": {
+      "recurring": [
+        {
+          "day": "L",
+          "slot": "PM",
+          "id": 1776628510793.76
+        }
+      ],
+      "unavailable": [
+        {
+          "day": 2,
+          "slot": "ALL",
+          "id": 1776628936127
+        },
+        {
+          "day": 9,
+          "slot": "ALL",
+          "id": 1776628940755
+        },
+        {
+          "day": 10,
+          "slot": "ALL",
+          "id": 1776628941172
+        }
+      ],
+      "preferences": []
+    },
+    "DES": {
+      "recurring": [
+        {
+          "day": "L",
+          "slot": "PM",
+          "id": 1776628510793.3015
+        }
+      ],
+      "unavailable": [
+        {
+          "day": 1,
+          "slot": "ALL",
+          "id": 1776628864373
+        },
+        {
+          "day": 2,
+          "slot": "ALL",
+          "id": 1776628864773
+        },
+        {
+          "day": 3,
+          "slot": "ALL",
+          "id": 1776628865081
+        },
+        {
+          "day": 7,
+          "slot": "ALL",
+          "id": 1776628870103
+        },
+        {
+          "day": 8,
+          "slot": "ALL",
+          "id": 1776628870461
+        },
+        {
+          "day": 27,
+          "slot": "ALL",
+          "id": 1776628874944
+        },
+        {
+          "day": 28,
+          "slot": "ALL",
+          "id": 1776628875352
+        },
+        {
+          "day": 29,
+          "slot": "ALL",
+          "id": 1776628875794
+        },
+        {
+          "day": 30,
+          "slot": "ALL",
+          "id": 1776628876231
+        },
+        {
+          "day": 26,
+          "slot": "PM",
+          "id": 1776628879569
+        }
+      ],
+      "preferences": []
+    },
+    "FUM": {
+      "recurring": [
+        {
+          "day": "L",
+          "slot": "PM",
+          "id": 1776628510793.6328
+        }
+      ],
+      "unavailable": [
+        {
+          "day": 29,
+          "slot": "ALL",
+          "id": 1776628827228
+        },
+        {
+          "day": 30,
+          "slot": "ALL",
+          "id": 1776628827570
+        },
+        {
+          "day": 31,
+          "slot": "ALL",
+          "id": 1776628827895
+        },
+        {
+          "day": 23,
+          "slot": "AM",
+          "id": 1776628849965
+        },
+        {
+          "day": 5,
+          "slot": "AM",
+          "id": 1776628854573
+        }
+      ],
+      "preferences": [
+        {
+          "day": 24,
+          "slot": "ALL",
+          "id": 1776628822003
+        }
+      ]
+    },
+    "DON": {
+      "recurring": [
+        {
+          "day": "ME",
+          "slot": "PM",
+          "id": 1776628510793.412
+        },
+        {
+          "day": "V",
+          "slot": "PM",
+          "id": 1776628510793.1587
+        }
+      ],
+      "unavailable": [
+        {
+          "day": 4,
+          "slot": "PM",
+          "id": 1776628703318
+        },
+        {
+          "day": 1,
+          "slot": "ALL",
+          "id": 1776628710734
+        },
+        {
+          "day": 2,
+          "slot": "ALL",
+          "id": 1776628711118
+        },
+        {
+          "day": 3,
+          "slot": "ALL",
+          "id": 1776628711459
+        }
+      ],
+      "preferences": []
+    },
+    "MAS": {
+      "recurring": [
+        {
+          "day": "MA",
+          "slot": "PM",
+          "id": 1776628510793.4934
+        },
+        {
+          "day": "G",
+          "slot": "PM",
+          "id": 1776628510793.3875
+        }
+      ],
+      "unavailable": [
+        {
+          "day": 18,
+          "slot": "ALL",
+          "id": 1776628544375
+        },
+        {
+          "day": 19,
+          "slot": "ALL",
+          "id": 1776628544767
+        },
+        {
+          "day": 20,
+          "slot": "ALL",
+          "id": 1776628545125
+        }
+      ],
+      "preferences": []
+    },
+    "OGG": {
+      "recurring": [
+        {
+          "day": "L",
+          "slot": "PM",
+          "id": 1776628510793.164
+        },
+        {
+          "day": "G",
+          "slot": "PM",
+          "id": 1776628510793.9324
+        }
+      ],
+      "unavailable": [
+        {
+          "day": 3,
+          "slot": "ALL",
+          "id": 1776628553103
+        },
+        {
+          "day": 7,
+          "slot": "ALL",
+          "id": 1776628557337
+        },
+        {
+          "day": 8,
+          "slot": "ALL",
+          "id": 1776628557671
+        },
+        {
+          "day": 15,
+          "slot": "ALL",
+          "id": 1776628560545
+        },
+        {
+          "day": 29,
+          "slot": "ALL",
+          "id": 1776628561845
+        },
+        {
+          "day": 20,
+          "slot": "ALL",
+          "id": 1776628566434
+        },
+        {
+          "day": 21,
+          "slot": "ALL",
+          "id": 1776628567283
+        }
+      ],
+      "preferences": [
+        {
+          "day": 9,
+          "slot": "ALL",
+          "id": 1776628581116
+        },
+        {
+          "day": 10,
+          "slot": "ALL",
+          "id": 1776628581458
+        },
+        {
+          "day": 23,
+          "slot": "ALL",
+          "id": 1776628582915
+        },
+        {
+          "day": 24,
+          "slot": "ALL",
+          "id": 1776628583228
+        }
+      ]
+    },
+    "MAG": {
+      "recurring": [
+        {
+          "day": "MA",
+          "slot": "PM",
+          "id": 1776628510793.6538
+        },
+        {
+          "day": "G",
+          "slot": "PM",
+          "id": 1776628510793.4058
+        }
+      ]
+    },
+    "PAS": {
+      "recurring": [
+        {
+          "day": "ME",
+          "slot": "PM",
+          "id": 1776628510793.498
+        }
+      ],
+      "unavailable": [
+        {
+          "day": 1,
+          "slot": "ALL",
+          "id": 1776628726201
+        },
+        {
+          "day": 2,
+          "slot": "ALL",
+          "id": 1776628726517
+        },
+        {
+          "day": 3,
+          "slot": "ALL",
+          "id": 1776628726868
+        }
+      ],
+      "preferences": []
+    },
+    "SES": {
+      "recurring": [
+        {
+          "day": "G",
+          "slot": "PM",
+          "id": 1776628510793.0486
+        }
+      ],
+      "unavailable": [
+        {
+          "day": 6,
+          "slot": "PM",
+          "id": 1776628633402
+        },
+        {
+          "day": 7,
+          "slot": "ALL",
+          "id": 1776628636994
+        },
+        {
+          "day": 8,
+          "slot": "ALL",
+          "id": 1776628637336
+        },
+        {
+          "day": 9,
+          "slot": "ALL",
+          "id": 1776628638560
+        },
+        {
+          "day": 10,
+          "slot": "ALL",
+          "id": 1776628640968
+        },
+        {
+          "day": 13,
+          "slot": "ALL",
+          "id": 1776628656360
+        },
+        {
+          "day": 20,
+          "slot": "PM",
+          "id": 1776628662372
+        },
+        {
+          "day": 23,
+          "slot": "ALL",
+          "id": 1776628667656
+        },
+        {
+          "day": 24,
+          "slot": "ALL",
+          "id": 1776628668014
+        },
+        {
+          "day": 30,
+          "slot": "ALL",
+          "id": 1776628671031
+        },
+        {
+          "day": 31,
+          "slot": "ALL",
+          "id": 1776628671356
+        },
+        {
+          "day": 25,
+          "slot": "ALL",
+          "id": 1776628685726
+        }
+      ],
+      "preferences": [
+        {
+          "day": 16,
+          "slot": "ALL",
+          "id": 1776628676514
+        },
+        {
+          "day": 17,
+          "slot": "ALL",
+          "id": 1776628676797
+        }
+      ]
+    },
+    "RUZ": {
+      "unavailable": [
+        {
+          "day": 11,
+          "slot": "ALL",
+          "id": 1776628621544
+        },
+        {
+          "day": 12,
+          "slot": "ALL",
+          "id": 1776628621807
+        }
+      ],
+      "preferences": [
+        {
+          "day": 30,
+          "slot": "ALL",
+          "id": 1776628599399
+        },
+        {
+          "day": 31,
+          "slot": "ALL",
+          "id": 1776628599741
+        },
+        {
+          "day": 25,
+          "slot": "AM",
+          "id": 1776628611028
+        }
+      ]
+    },
+    "LAM": {
+      "unavailable": [
+        {
+          "day": 16,
+          "slot": "ALL",
+          "id": 1776628777458
+        },
+        {
+          "day": 23,
+          "slot": "ALL",
+          "id": 1776628780225
+        },
+        {
+          "day": 15,
+          "slot": "PM",
+          "id": 1776628786950
+        }
+      ],
+      "preferences": [],
+      "recurring": [
+        {
+          "day": "G",
+          "slot": "PM",
+          "id": 1776628794458.244
+        }
+      ]
+    },
+    "SAL": {
+      "unavailable": [
+        {
+          "day": 24,
+          "slot": "ALL",
+          "id": 1776628921535
+        },
+        {
+          "day": 31,
+          "slot": "ALL",
+          "id": 1776628921876
+        },
+        {
+          "day": 30,
+          "slot": "ALL",
+          "id": 1776628922293
+        },
+        {
+          "day": 29,
+          "slot": "ALL",
+          "id": 1776628922710
+        },
+        {
+          "day": 28,
+          "slot": "ALL",
+          "id": 1776628923118
+        },
+        {
+          "day": 27,
+          "slot": "ALL",
+          "id": 1776628923535
+        },
+        {
+          "day": 26,
+          "slot": "ALL",
+          "id": 1776628923935
+        },
+        {
+          "day": 25,
+          "slot": "ALL",
+          "id": 1776628924293
+        }
+      ],
+      "preferences": []
+    }
+  },
+  "timestamp": "2026-04-20T08:18:17.345Z",
+  "type": "SHIFTMAKER_SESSION"
+}

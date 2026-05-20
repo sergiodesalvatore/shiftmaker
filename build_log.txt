@@ -1,0 +1,72 @@
+
+> shiftmaker@0.0.0 electron:build
+> vite build && xattr -cr dist && electron-builder
+
+vite v7.3.1 building client environment for production...
+transforming...
+✓ 2083 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                     0.46 kB │ gzip:   0.29 kB
+dist/assets/index-COpqQPiU.css      3.14 kB │ gzip:   0.99 kB
+dist/assets/index-CPSj0vAi.js   1,089.84 kB │ gzip: 307.95 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1.44s
+  • electron-builder  version=26.4.0 os=25.1.0
+  • loaded configuration  file=package.json ("build" field)
+  • executing @electron/rebuild  electronVersion=40.0.0 arch=arm64 buildFromSource=false workspaceRoot=/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER projectDir=./ appDir=./
+  • installing native dependencies  arch=arm64
+  • completed installing native dependencies
+  • packaging       platform=darwin arch=arm64 electron=40.0.0 appOutDir=dist_electron/mac-arm64
+  • falling back to ad-hoc signature for macOS application code signing
+  • signing         file=dist_electron/mac-arm64/ShiftMaker.app platform=darwin type=distribution identityName=- identityHash=none provisioningProfile=none
+  ⨯ Command failed: codesign --verify --deep --strict --verbose=2 /Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper (GPU).app
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper (Renderer).app
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper (Plugin).app
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper.app
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Mantle.framework/Versions/Current/.
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Squirrel.framework/Versions/Current/.
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ReactiveObjC.framework/Versions/Current/.
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper (Plugin).app
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper (GPU).app
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper (Renderer).app
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper.app
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Mantle.framework/Versions/Current/.
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Squirrel.framework/Versions/Current/.
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ReactiveObjC.framework/Versions/Current/.
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Electron Framework.framework/Versions/Current/.
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Electron Framework.framework/Versions/Current/Helpers/chrome_crashpad_handler
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Electron Framework.framework/Versions/Current/Helpers/chrome_crashpad_handler
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Electron Framework.framework/Versions/Current/.
+/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app: resource fork, Finder information, or similar detritus not allowed
+  failedTask=build stackTrace=Error: Command failed: codesign --verify --deep --strict --verbose=2 /Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper (GPU).app
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper (Renderer).app
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper (Plugin).app
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper.app
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Mantle.framework/Versions/Current/.
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Squirrel.framework/Versions/Current/.
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ReactiveObjC.framework/Versions/Current/.
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper (Plugin).app
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper (GPU).app
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper (Renderer).app
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ShiftMaker Helper.app
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Mantle.framework/Versions/Current/.
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Squirrel.framework/Versions/Current/.
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/ReactiveObjC.framework/Versions/Current/.
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Electron Framework.framework/Versions/Current/.
+--prepared:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Electron Framework.framework/Versions/Current/Helpers/chrome_crashpad_handler
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Electron Framework.framework/Versions/Current/Helpers/chrome_crashpad_handler
+--validated:/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app/Contents/Frameworks/Electron Framework.framework/Versions/Current/.
+/Users/sergi/Library/CloudStorage/OneDrive-Personale/Desktop/Cloud/ANTIGRAVITY/SHIFTMAKER/dist_electron/mac-arm64/ShiftMaker.app: resource fork, Finder information, or similar detritus not allowed
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at ChildProcess.exithandler (node:child_process:417:12)
+    at ChildProcess.emit (node:events:519:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at Process.ChildProcess._handle.onexit (node:internal/child_process:304:5)
