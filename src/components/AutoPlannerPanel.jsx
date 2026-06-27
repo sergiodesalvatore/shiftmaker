@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Sparkles, BrainCircuit, Play, History, CalendarDays, CheckCircle, AlertTriangle } from 'lucide-react';
 import { analyzeHistoricalData, generateMonthPlan } from '../utils/autoPlannerCore';
 
-export default function AutoPlannerPanel({ people, shifts, constraints, vacationData }) {
+export default function AutoPlannerPanel({ people, shifts, constraints, vacationData, month, year, onSaveGenerated }) {
     // Only use real doctors for the auto-planner
     const ALLOWED_DOCTORS = ['BON', 'BUR', 'COS', 'DES', 'DON', 'FUM', 'INV', 'LAM', 'MAG', 'MAS', 'OGG', 'PAS', 'RUS', 'RUZ', 'SAL', 'SAN', 'SES'];
     const activePeople = people.filter(p => ALLOWED_DOCTORS.includes(p));
@@ -10,10 +10,12 @@ export default function AutoPlannerPanel({ people, shifts, constraints, vacation
     const actualPeople = activePeople.length > 0 ? activePeople : ALLOWED_DOCTORS;
 
     const [step, setStep] = useState(1); // 1: Config, 2: Preview
-    const [targetMonth, setTargetMonth] = useState('2026-08');
     const [isGenerating, setIsGenerating] = useState(false);
     const [generatedShifts, setGeneratedShifts] = useState(null);
     const [learningStats, setLearningStats] = useState(null);
+
+    const targetMonthStr = `${year}-${String(month).padStart(2, '0')}`;
+    const isNewGuardSystem = year >= 2027;
 
     // AI Pre-Trained Knowledge from "turni precedenti"
     const PRE_TRAINED_STATS = {
@@ -35,6 +37,56 @@ export default function AutoPlannerPanel({ people, shifts, constraints, vacation
         return PRE_TRAINED_STATS.avgShifts; // Passiamo le medie storiche al motore
     };
 
+    const getRawColumnIndexForType = (shType) => {
+        const types = {
+            'AMBULATORIO_08-14': 2, 'AMBULATORIO_14-19': 3,
+            'REPARTO_08-14': 4, 'BALD_08-14': 5,
+            'DH_08-14': 6, 'CONS_08-14': 7,
+            'SALA_OP_08-14': 8, 'SALA_OP_14-19': 9,
+            'SALA_DS_08-14': 10, 'NORA_08-14': 11,
+            'SM_08-14': 12, 
+            'PS_08-14': 13
+        };
+        if (isNewGuardSystem) {
+            types['GUARDIA_08-20'] = 14;
+            types['GUARDIA_NOTTE_20-08'] = 15;
+            types['REP_2'] = 16;
+            types['FERIE'] = 17;
+        } else {
+            types['PS_CONT_14-20'] = 14;
+            types['REP_2'] = 15;
+            types['FERIE'] = 16;
+        }
+        return types[shType] || 18;
+    };
+
+    const handleAccept = () => {
+        if (generatedShifts && onSaveGenerated) {
+            const formatted = [];
+            
+            // Preserve existing DAY_NAME shifts
+            const dayNames = shifts.filter(s => s.type === 'DAY_NAME');
+            formatted.push(...dayNames);
+
+            generatedShifts.grid.forEach(dayData => {
+                const s = dayData.shifts;
+                Object.keys(s).forEach(shType => {
+                    s[shType].forEach(person => {
+                        formatted.push({
+                            id: `${dayData.day}-${shType}-${Math.random().toString(36).substr(2, 9)}`,
+                            day: dayData.day.toString(),
+                            type: shType,
+                            label: shType.replace(/_/g, ' '),
+                            content: person,
+                            rawColumnIndex: getRawColumnIndexForType(shType)
+                        });
+                    });
+                });
+            });
+            onSaveGenerated(formatted);
+        }
+    };
+
     const handleGenerate = () => {
         setIsGenerating(true);
         const historicalStats = runLearningPhase();
@@ -43,7 +95,7 @@ export default function AutoPlannerPanel({ people, shifts, constraints, vacation
             setIsGenerating(false);
             setStep(2);
             
-            const result = generateMonthPlan(targetMonth, actualPeople, constraints, vacationData, historicalStats);
+            const result = generateMonthPlan(targetMonthStr, actualPeople, constraints, vacationData, historicalStats);
             setGeneratedShifts(result);
         }, 800);
     };
@@ -74,9 +126,9 @@ export default function AutoPlannerPanel({ people, shifts, constraints, vacation
                             <input 
                                 type="month" 
                                 className="input-base" 
-                                value={targetMonth} 
-                                onChange={e => setTargetMonth(e.target.value)} 
-                                style={{ fontSize: '1.1rem', padding: '10px' }}
+                                value={targetMonthStr} 
+                                readOnly
+                                style={{ fontSize: '1.1rem', padding: '10px', backgroundColor: 'var(--sys-color-surface-variant)', cursor: 'not-allowed' }}
                             />
                         </div>
 
@@ -143,8 +195,8 @@ export default function AutoPlannerPanel({ people, shifts, constraints, vacation
                         <button onClick={() => setStep(1)} className="btn btn-secondary" style={{ padding: '6px 12px' }}>
                             &larr; Torna alla Configurazione
                         </button>
-                        <h3 style={{ margin: 0 }}>Anteprima: {targetMonth}</h3>
-                        <button className="btn btn-primary" style={{ background: 'var(--sys-color-success)' }}>
+                        <h3 style={{ margin: 0 }}>Anteprima: {targetMonthStr}</h3>
+                        <button className="btn btn-primary" onClick={handleAccept} style={{ background: 'var(--sys-color-success)' }}>
                             ✔ Accetta e Salva nei Turni Attivi
                         </button>
                     </div>
@@ -187,7 +239,14 @@ export default function AutoPlannerPanel({ people, shifts, constraints, vacation
                                         <th style={{ padding: '8px', borderBottom: '2px solid #e2e8f0', textAlign: 'left', borderLeft: '1px solid #e2e8f0' }}>DS</th>
                                         <th style={{ padding: '8px', borderBottom: '2px solid #e2e8f0', textAlign: 'left' }}>S.M.</th>
                                         <th style={{ padding: '8px', borderBottom: '2px solid #e2e8f0', textAlign: 'left', borderLeft: '1px solid #e2e8f0' }}>PS (08-14)</th>
-                                        <th style={{ padding: '8px', borderBottom: '2px solid #e2e8f0', textAlign: 'left' }}>PS (14-20)</th>
+                                        {isNewGuardSystem ? (
+                                            <>
+                                                <th style={{ padding: '8px', borderBottom: '2px solid #e2e8f0', textAlign: 'left' }}>GUARDIA (08-20)</th>
+                                                <th style={{ padding: '8px', borderBottom: '2px solid #e2e8f0', textAlign: 'left' }}>GUARDIA NOTTE (20-08)</th>
+                                            </>
+                                        ) : (
+                                            <th style={{ padding: '8px', borderBottom: '2px solid #e2e8f0', textAlign: 'left' }}>PS (14-20)</th>
+                                        )}
                                         <th style={{ padding: '8px', borderBottom: '2px solid #e2e8f0', textAlign: 'left' }}>2° REP</th>
                                     </tr>
                                 </thead>
@@ -217,7 +276,14 @@ export default function AutoPlannerPanel({ people, shifts, constraints, vacation
                                                 <td style={{ padding: '6px 8px', color: '#a21caf' }}>{formatDocs('SM_08-14')}</td>
                                                 
                                                 <td style={{ padding: '6px 8px', borderLeft: '1px solid #e2e8f0', color: '#b45309', fontWeight: 'bold' }}>{formatDocs('PS_08-14')}</td>
-                                                <td style={{ padding: '6px 8px', color: '#b45309', fontWeight: 'bold' }}>{formatDocs('PS_CONT_14-20')}</td>
+                                                {isNewGuardSystem ? (
+                                                    <>
+                                                        <td style={{ padding: '6px 8px', color: '#b45309', fontWeight: 'bold' }}>{formatDocs('GUARDIA_08-20')}</td>
+                                                        <td style={{ padding: '6px 8px', color: '#b45309', fontWeight: 'bold' }}>{formatDocs('GUARDIA_NOTTE_20-08')}</td>
+                                                    </>
+                                                ) : (
+                                                    <td style={{ padding: '6px 8px', color: '#b45309', fontWeight: 'bold' }}>{formatDocs('PS_CONT_14-20')}</td>
+                                                )}
                                                 <td style={{ padding: '6px 8px', color: '#b45309' }}>{formatDocs('REP_2')}</td>
                                             </tr>
                                         )

@@ -4,44 +4,64 @@ import { validateShift } from '../utils/validator';
 import { KNOWN_PEOPLE } from '../utils/constants';
 import { exportShiftsToWord } from '../utils/exportUtils';
 
-// Initial defaults
-const INITIAL_WIDTHS = [
-    50, 50, // Data, Giorno (0, 1)
-    200, 200, // Ambulatorio
-    80, 80, 80, 80, // Reparto, Bald, DH, Cons
-    200, 200, // Sala Op
-    80, 80, 80, // Sala DS, Nora, SM
-    200, // PS
-    200, // PS Cont
-    80, // 2 Rep
-    180, // Ferie
-    150 // Fuori Turno
-];
+const getColWidths = (isNewGuardSystem) => {
+    const widths = [
+        50, 50, // Data, Giorno (0, 1)
+        200, 200, // Ambulatorio (2, 3)
+        80, 80, 80, 80, // Reparto, Bald, DH, Cons (4, 5, 6, 7)
+        200, 200, // Sala Op (8, 9)
+        80, 80, 80, // Sala DS, Nora, SM (10, 11, 12)
+        200, // PS (13)
+        200, // CONT+REP PS or GUARDIA (14)
+    ];
+    if (isNewGuardSystem) {
+        widths.push(200); // GUARDIA NOTTE (15)
+    }
+    widths.push(80); // 2 Rep (15 or 16)
+    widths.push(180); // Ferie (16 or 17)
+    widths.push(150); // Fuori Turno (17 or 18)
+    return widths;
+};
 
-const HEADER_GROUPS_STRUCT = [
-    { label: 'DATA', colSpan: 2, indices: [0, 1] },
-    { label: 'AMBULATORIO', colSpan: 2, subHeaders: ['08 - 14', '14 - 19'], indices: [2, 3] },
-    { label: 'REPARTO', colSpan: 1, subHeaders: ['08 - 14'], indices: [4] },
-    { label: 'BALD', colSpan: 1, subHeaders: ['08 - 14'], indices: [5] },
-    { label: 'DH', colSpan: 1, subHeaders: ['08 - 14'], indices: [6] },
-    { label: 'CONS', colSpan: 1, subHeaders: ['08 - 14'], indices: [7] },
-    { label: 'SALA OPERATORIA', colSpan: 2, subHeaders: ['08 - 14', '14-19'], indices: [8, 9] },
-    { label: 'SALA DS', colSpan: 1, subHeaders: ['08 - 14'], indices: [10] },
-    { label: 'NORA', colSpan: 1, subHeaders: ['08 - 14'], indices: [11] },
-    { label: 'S.M.', colSpan: 1, subHeaders: ['08 - 14'], indices: [12] },
-    { label: 'PS', colSpan: 1, subHeaders: ['08 - 14'], indices: [13] },
-    { label: 'CONT+REP PS', colSpan: 1, subHeaders: ['14 - 08'], indices: [14] },
-    { label: '2° REP', colSpan: 1, subHeaders: [''], indices: [15] },
-    { label: "FERIE E ALTRE ATTIVITA'", colSpan: 1, subHeaders: [''], indices: [16] },
-    { label: "FUORI TURNO", colSpan: 1, subHeaders: [''], indices: [17] }
-];
-
-export default function ShiftBoard({ data, onReset, onShiftsChange, constraints }) {
+export default function ShiftBoard({ data, onReset, onShiftsChange, constraints, month, year }) {
     const shifts = data.shifts;
-    const [colWidths, setColWidths] = useState(INITIAL_WIDTHS);
+    const isNewGuardSystem = year >= 2027;
+    const [colWidths, setColWidths] = useState(() => getColWidths(isNewGuardSystem));
     const [editingCell, setEditingCell] = useState(null); // includes { position: {top,left...} }
     const [newItemText, setNewItemText] = useState('');
     const [showDuplicates, setShowDuplicates] = useState(false);
+
+    useEffect(() => {
+        setColWidths(getColWidths(isNewGuardSystem));
+    }, [isNewGuardSystem]);
+
+    const headerGroups = useMemo(() => {
+        const groups = [
+            { label: 'DATA', colSpan: 2, indices: [0, 1] },
+            { label: 'AMBULATORIO', colSpan: 2, subHeaders: ['08 - 14', '14 - 19'], indices: [2, 3] },
+            { label: 'REPARTO', colSpan: 1, subHeaders: ['08 - 14'], indices: [4] },
+            { label: 'BALD', colSpan: 1, subHeaders: ['08 - 14'], indices: [5] },
+            { label: 'DH', colSpan: 1, subHeaders: ['08 - 14'], indices: [6] },
+            { label: 'CONS', colSpan: 1, subHeaders: ['08 - 14'], indices: [7] },
+            { label: 'SALA OPERATORIA', colSpan: 2, subHeaders: ['08 - 14', '14-19'], indices: [8, 9] },
+            { label: 'SALA DS', colSpan: 1, subHeaders: ['08 - 14'], indices: [10] },
+            { label: 'NORA', colSpan: 1, subHeaders: ['08 - 14'], indices: [11] },
+            { label: 'S.M.', colSpan: 1, subHeaders: ['08 - 14'], indices: [12] },
+            { label: 'PS', colSpan: 1, subHeaders: ['08 - 14'], indices: [13] },
+            isNewGuardSystem 
+                ? { label: 'GUARDIA', colSpan: 1, subHeaders: ['08 - 20'], indices: [14] }
+                : { label: 'CONT+REP PS', colSpan: 1, subHeaders: ['14 - 08'], indices: [14] }
+        ];
+        if (isNewGuardSystem) {
+            groups.push({ label: 'GUARDIA NOTTE', colSpan: 1, subHeaders: ['20 - 08'], indices: [15] });
+        }
+        
+        const offset = isNewGuardSystem ? 1 : 0;
+        groups.push({ label: '2° REP', colSpan: 1, subHeaders: [''], indices: [15 + offset] });
+        groups.push({ label: "FERIE E ALTRE ATTIVITA'", colSpan: 1, subHeaders: [''], indices: [16 + offset] });
+        groups.push({ label: "FUORI TURNO", colSpan: 1, subHeaders: [''], indices: [17 + offset] });
+        return groups;
+    }, [isNewGuardSystem]);
 
     // Resizing State
     const resizingRef = useRef(null);
@@ -87,8 +107,8 @@ export default function ShiftBoard({ data, onReset, onShiftsChange, constraints 
         return map;
     }, [shifts]);
 
-    const uniqueDays = useMemo(() => Array.from(new Set(shifts.map(s => parseInt(s.day)))).sort((a, b) => a - b), [shifts]);
-    const daysToRender = uniqueDays.length > 0 ? uniqueDays : Array.from({ length: 31 }, (_, i) => i + 1);
+    const daysInMonth = useMemo(() => new Date(year, month, 0).getDate(), [year, month]);
+    const daysToRender = useMemo(() => Array.from({ length: daysInMonth }, (_, i) => i + 1), [daysInMonth]);
 
     // --- Drag/Drop ---
     const handleDragStart = (e, token, tokenIdx, sourceDay, sourceColIndex, sourceShiftId) => {
@@ -243,7 +263,7 @@ export default function ShiftBoard({ data, onReset, onShiftsChange, constraints 
                         `}</style>
                     </label>
 
-                    <button className="btn btn-primary" onClick={() => exportShiftsToWord(shiftsByDay, daysToRender)}>
+                    <button className="btn btn-primary" onClick={() => exportShiftsToWord(shiftsByDay, daysToRender, isNewGuardSystem)}>
                         <Download size={16} />
                         Esporta Turni
                     </button>
@@ -261,7 +281,7 @@ export default function ShiftBoard({ data, onReset, onShiftsChange, constraints 
                     <thead style={{ position: 'sticky', top: 0, zIndex: 5 }}>
                         {/* Group Header */}
                         <tr style={{ background: 'var(--sys-color-surface)' }}>
-                            {HEADER_GROUPS_STRUCT.map((group, i) => (
+                            {headerGroups.map((group, i) => (
                                 <th key={i} colSpan={group.colSpan} style={{
                                     padding: '8px',
                                     borderBottom: '1px solid var(--sys-color-outline)',
@@ -280,7 +300,7 @@ export default function ShiftBoard({ data, onReset, onShiftsChange, constraints 
                         <tr style={{ background: 'var(--sys-color-surface)' }}>
                             {[
                                 { w: colWidths[0], idx: 0 }, { w: colWidths[1], idx: 1 },
-                                ...HEADER_GROUPS_STRUCT.slice(1).flatMap(group => group.subHeaders.map((sub, i) => ({ w: colWidths[group.indices[i]], idx: group.indices[i], label: sub })))
+                                ...headerGroups.slice(1).flatMap(group => group.subHeaders.map((sub, i) => ({ w: colWidths[group.indices[i]], idx: group.indices[i], label: sub })))
                             ].map((col, i) => (
                                 <th key={i} style={{
                                     width: col.w,
@@ -309,7 +329,8 @@ export default function ShiftBoard({ data, onReset, onShiftsChange, constraints 
 
                             // Check duplicates
                             const rowTokens = [];
-                            for (let c = 2; c <= 16; c++) {
+                            const maxCol = isNewGuardSystem ? 17 : 16;
+                            for (let c = 2; c <= maxCol; c++) {
                                 const cellShifts = shiftsByDay[day]?.[c] || [];
                                 cellShifts.forEach(s => s.content.split(/\s+/).filter(Boolean).forEach(t => rowTokens.push(t)));
                             }
@@ -324,7 +345,7 @@ export default function ShiftBoard({ data, onReset, onShiftsChange, constraints 
                                     <td style={{ borderBottom: '1px solid var(--sys-color-outline-variant)', borderRight: '1px solid var(--sys-color-outline-variant)', fontWeight: 'bold', background: 'var(--sys-color-background)', textAlign: 'center', padding: '4px' }}>{day}</td>
                                     <td style={{ borderBottom: '1px solid var(--sys-color-outline-variant)', borderRight: '1px solid var(--sys-color-outline-variant)', fontWeight: 'bold', background: 'var(--sys-color-background)', textAlign: 'center', padding: '4px' }}>{dayNameRaw}</td>
 
-                                    {Array.from({ length: 15 }).map((_, i) => {
+                                    {Array.from({ length: isNewGuardSystem ? 16 : 15 }).map((_, i) => {
                                         const colIndex = i + 2;
                                         const cellShifts = shiftsByDay[day]?.[colIndex] || [];
                                         const width = colWidths[colIndex];
@@ -336,10 +357,18 @@ export default function ShiftBoard({ data, onReset, onShiftsChange, constraints 
                                                 6: 'DH_08-14', 7: 'CONS_08-14',
                                                 8: 'SALA_OP_08-14', 9: 'SALA_OP_14-19',
                                                 10: 'SALA_DS_08-14', 11: 'NORA_08-14',
-                                                12: 'SM_08-14', 13: 'PS_08-14',
-                                                14: 'PS_CONT_14-20', 15: 'REP_2',
-                                                16: 'FERIE'
+                                                12: 'SM_08-14', 13: 'PS_08-14'
                                             };
+                                            if (isNewGuardSystem) {
+                                                types[14] = 'GUARDIA_08-20';
+                                                types[15] = 'GUARDIA_NOTTE_20-08';
+                                                types[16] = 'REP_2';
+                                                types[17] = 'FERIE';
+                                            } else {
+                                                types[14] = 'PS_CONT_14-20';
+                                                types[15] = 'REP_2';
+                                                types[16] = 'FERIE';
+                                            }
                                             return types[idx] || 'GENERIC';
                                         };
 
@@ -360,30 +389,43 @@ export default function ShiftBoard({ data, onReset, onShiftsChange, constraints 
                                                     {cellShifts.map((shift, shiftIdx) => (
                                                         <div key={shift.id} style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2px', borderBottom: shiftIdx < cellShifts.length - 1 ? '1px dotted #ccc' : 'none' }}>
                                                             {shift.content.split(/\s+/).filter(Boolean).map((token, tIdx) => {
-                                                                const isDuplicate = showDuplicates && rowCounts[token] > 1;
-                                                                const validation = validateShift(token, day, dayName, checkType(colIndex), constraints);
+                                                                const hasDuplicate = rowCounts[token] > 1;
+                                                                const isDuplicateHighlight = showDuplicates && hasDuplicate;
+                                                                const validation = validateShift(token, day, dayName, checkType(colIndex), constraints, shiftsByDay, year, month);
 
                                                                 let bg = 'var(--sys-color-primary-container)';
                                                                 let color = 'var(--sys-color-on-primary-container)';
                                                                 let border = 'none';
 
-                                                                if (isDuplicate) {
+                                                                if (validation.status === 'ERROR') {
+                                                                    bg = 'var(--sys-color-orange)';
+                                                                    color = 'white';
+                                                                } else if (isDuplicateHighlight) {
                                                                     bg = 'var(--sys-color-warning)';
                                                                     color = '#000';
-                                                                } else if (validation.status === 'ERROR') {
-                                                                    bg = 'var(--sys-color-error)';
-                                                                    color = 'white';
                                                                 } else if (validation.status === 'PREFERENCE') {
                                                                     bg = 'var(--sys-color-success)';
                                                                     color = 'white';
                                                                 }
+
+                                                                // Build a detailed tooltip explanation
+                                                                const tooltipParts = [];
+                                                                if (hasDuplicate) {
+                                                                    tooltipParts.push(`⚠️ Doppione: ${token} è assegnato a più turni in questa data`);
+                                                                }
+                                                                if (validation.message) {
+                                                                    tooltipParts.push(validation.message);
+                                                                }
+                                                                const tooltipText = tooltipParts.length > 0 
+                                                                    ? tooltipParts.join('\n') 
+                                                                    : 'Trascina per spostare o riordinare';
 
                                                                 return (
                                                                     <span key={tIdx} draggable 
                                                                         onDragStart={(e) => handleDragStart(e, token, tIdx, day, colIndex, shift.id)}
                                                                         onDragOver={handleDragOver}
                                                                         onDrop={(e) => handleDropOnToken(e, day, colIndex, tIdx, shift.id)}
-                                                                        title={validation.message || 'Trascina per spostare o riordinare'}
+                                                                        title={tooltipText}
                                                                         style={{
                                                                             background: bg, color: color, border: border,
                                                                             padding: '2px 6px', fontSize: '0.7rem', fontWeight: 600,
@@ -401,8 +443,8 @@ export default function ShiftBoard({ data, onReset, onShiftsChange, constraints 
                                         );
                                     })}
 
-                                    {/* Off Duty (Col 17) */}
-                                    <td style={{ borderBottom: '1px solid var(--sys-color-outline-variant)', borderRight: '1px solid var(--sys-color-outline-variant)', padding: '2px', verticalAlign: 'middle', background: '#fff0f2', width: colWidths[17] }}>
+                                    {/* Off Duty (Col 17 or 18) */}
+                                    <td style={{ borderBottom: '1px solid var(--sys-color-outline-variant)', borderRight: '1px solid var(--sys-color-outline-variant)', padding: '2px', verticalAlign: 'middle', background: '#fff0f2', width: colWidths[isNewGuardSystem ? 18 : 17] }}>
                                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2px', justifyContent: 'center' }}>
                                             {missingPeople.map(p => (
                                                 <span key={p} style={{ fontSize: '10px', background: 'white', border: '1px solid #ffccd5', padding: '1px 3px', borderRadius: '2px', color: '#be123c' }}>{p}</span>

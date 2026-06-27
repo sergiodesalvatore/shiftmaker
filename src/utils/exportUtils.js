@@ -1,31 +1,38 @@
 import { Document, Packer, Paragraph, Table, TableCell, TableRow, WidthType, TextRun, BorderStyle, ShadingType } from "docx";
 import { saveAs } from "file-saver";
 
-const HEADER_GROUPS_STRUCT = [
-    { label: 'DATA', colSpan: 2, indices: [0, 1] },
-    { label: 'AMBULATORIO', colSpan: 2, subHeaders: ['08 - 14', '14 - 19'], indices: [2, 3] },
-    { label: 'REPARTO', colSpan: 1, subHeaders: ['08 - 14'], indices: [4] },
-    { label: 'BALD', colSpan: 1, subHeaders: ['08 - 14'], indices: [5] },
-    { label: 'DH', colSpan: 1, subHeaders: ['08 - 14'], indices: [6] },
-    { label: 'CONS', colSpan: 1, subHeaders: ['08 - 14'], indices: [7] },
-    { label: 'SALA OPERATORIA', colSpan: 2, subHeaders: ['08 - 14', '14-19'], indices: [8, 9] },
-    { label: 'SALA DS', colSpan: 1, subHeaders: ['08 - 14'], indices: [10] },
-    { label: 'NORA', colSpan: 1, subHeaders: ['08 - 14'], indices: [11] },
-    { label: 'S.M.', colSpan: 1, subHeaders: ['08 - 14'], indices: [12] },
-    { label: 'PS', colSpan: 1, subHeaders: ['08 - 14'], indices: [13] },
-    { label: 'CONT+REP PS', colSpan: 1, subHeaders: ['14 - 08'], indices: [14] },
-    { label: '2° REP', colSpan: 1, subHeaders: [''], indices: [15] },
-    { label: "FERIE E ALTRE ATTIVITA'", colSpan: 1, subHeaders: [''], indices: [16] },
-    // Index 17 (FUORI TURNO) is excluded
-];
-
-export const exportShiftsToWord = (shiftsByDay, daysToRender) => {
+export const exportShiftsToWord = (shiftsByDay, daysToRender, isNewGuardSystem = false) => {
     try {
+        const headerGroups = [
+            { label: 'DATA', colSpan: 2, indices: [0, 1] },
+            { label: 'AMBULATORIO', colSpan: 2, subHeaders: ['08 - 14', '14 - 19'], indices: [2, 3] },
+            { label: 'REPARTO', colSpan: 1, subHeaders: ['08 - 14'], indices: [4] },
+            { label: 'BALD', colSpan: 1, subHeaders: ['08 - 14'], indices: [5] },
+            { label: 'DH', colSpan: 1, subHeaders: ['08 - 14'], indices: [6] },
+            { label: 'CONS', colSpan: 1, subHeaders: ['08 - 14'], indices: [7] },
+            { label: 'SALA OPERATORIA', colSpan: 2, subHeaders: ['08 - 14', '14-19'], indices: [8, 9] },
+            { label: 'SALA DS', colSpan: 1, subHeaders: ['08 - 14'], indices: [10] },
+            { label: 'NORA', colSpan: 1, subHeaders: ['08 - 14'], indices: [11] },
+            { label: 'S.M.', colSpan: 1, subHeaders: ['08 - 14'], indices: [12] },
+            { label: 'PS', colSpan: 1, subHeaders: ['08 - 14'], indices: [13] },
+        ];
+
+        if (isNewGuardSystem) {
+            headerGroups.push({ label: 'GUARDIA', colSpan: 1, subHeaders: ['08 - 20'], indices: [14] });
+            headerGroups.push({ label: 'GUARDIA NOTTE', colSpan: 1, subHeaders: ['20 - 08'], indices: [15] });
+            headerGroups.push({ label: '2° REP', colSpan: 1, subHeaders: [''], indices: [16] });
+            headerGroups.push({ label: "FERIE E ALTRE ATTIVITA'", colSpan: 1, subHeaders: [''], indices: [17] });
+        } else {
+            headerGroups.push({ label: 'CONT+REP PS', colSpan: 1, subHeaders: ['14 - 08'], indices: [14] });
+            headerGroups.push({ label: '2° REP', colSpan: 1, subHeaders: [''], indices: [15] });
+            headerGroups.push({ label: "FERIE E ALTRE ATTIVITA'", colSpan: 1, subHeaders: [''], indices: [16] });
+        }
+
         // 1. Create Header Rows
         const headerRow1Cells = [];
         const headerRow2Cells = [];
 
-        HEADER_GROUPS_STRUCT.forEach(group => {
+        headerGroups.forEach(group => {
             // Row 1 Cell
             headerRow1Cells.push(new TableCell({
                 children: [new Paragraph({
@@ -37,7 +44,6 @@ export const exportShiftsToWord = (shiftsByDay, daysToRender) => {
             }));
 
             // Row 2 Cells (Subheaders) or Empty if merged conceptually
-            // We need to generate columns for indices 0 to 16.
             if (group.indices) {
                 group.indices.forEach((colIdx, i) => {
                     let subText = (group.subHeaders && group.subHeaders[i]) || "";
@@ -55,6 +61,7 @@ export const exportShiftsToWord = (shiftsByDay, daysToRender) => {
         });
 
         // 2. Create Data Rows
+        const maxCol = isNewGuardSystem ? 17 : 16;
         const dataRows = daysToRender.map(day => {
             const isWeekend = isWeekendDay(day, shiftsByDay);
             const rowColor = isWeekend ? "D1D5DB" : "FFFFFF"; // Gray or White
@@ -68,8 +75,8 @@ export const exportShiftsToWord = (shiftsByDay, daysToRender) => {
             const dayNameRaw = shiftsByDay[day]?.[1]?.[0]?.content || '';
             cells.push(createDataCell(dayNameRaw, true, "E5E7EB"));
 
-            // Data Cols (2 to 16)
-            for (let col = 2; col <= 16; col++) {
+            // Data Cols (2 to maxCol)
+            for (let col = 2; col <= maxCol; col++) {
                 const cellShifts = shiftsByDay[day]?.[col] || [];
                 const content = cellShifts.map(s => s.content.trim()).join(" ");
                 cells.push(createDataCell(content, false, rowColor));

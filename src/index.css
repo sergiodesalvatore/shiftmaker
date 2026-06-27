@@ -16,6 +16,8 @@
   --sys-color-success: #146c2e;
   --sys-color-warning: #efb700;
   /* Darker yellow for text visibility */
+  --sys-color-orange: #ea580c;
+  /* Deep warnings orange */
 
   --sys-elevation-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
   --sys-elevation-2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);

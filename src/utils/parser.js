@@ -59,7 +59,18 @@ function processShiftData(headers, rawRows) {
     const shifts = [];
     const people = new Set();
 
-    // Updated to 17 Columns total (Single CONT+REP column)
+    // Check if new system (Guardia columns exist in headers)
+    let isNewSystem = false;
+    if (headers && headers.length > 0) {
+        headers.forEach(row => {
+            row.forEach(cell => {
+                if (cell && cell.toUpperCase().includes('GUARDIA')) {
+                    isNewSystem = true;
+                }
+            });
+        });
+    }
+
     const COL_MAP = [
         { key: 'day_num', label: 'Giorno' },
         { key: 'day_name', label: 'D' },
@@ -75,11 +86,18 @@ function processShiftData(headers, rawRows) {
         { key: 'nora', label: 'Nora', type: 'NORA_08-14' },
         { key: 'sm', label: 'SM', type: 'SM_08-14' },
         { key: 'ps', label: 'PS', type: 'PS_08-14' },
-        { key: 'ps_cont', label: 'PS Cont', type: 'PS_CONT_14-20' },    // Col 14 (Merged)
-        // No separate col 15 for 14-08
-        { key: 'rep_2', label: '2 Rep', type: 'REP_2' },                 // Col 15
-        { key: 'ferie', label: 'Ferie/Altro', type: 'FERIE' },            // Col 16
     ];
+
+    if (isNewSystem) {
+        COL_MAP.push({ key: 'guardia', label: 'Guardia', type: 'GUARDIA_08-20' });
+        COL_MAP.push({ key: 'guardia_notte', label: 'Guardia Notte', type: 'GUARDIA_NOTTE_20-08' });
+        COL_MAP.push({ key: 'rep_2', label: '2 Rep', type: 'REP_2' });
+        COL_MAP.push({ key: 'ferie', label: 'Ferie/Altro', type: 'FERIE' });
+    } else {
+        COL_MAP.push({ key: 'ps_cont', label: 'PS Cont', type: 'PS_CONT_14-20' });
+        COL_MAP.push({ key: 'rep_2', label: '2 Rep', type: 'REP_2' });
+        COL_MAP.push({ key: 'ferie', label: 'Ferie/Altro', type: 'FERIE' });
+    }
 
     rawRows.forEach((row, rowIndex) => {
         if (row.length < 2) return;
@@ -92,8 +110,6 @@ function processShiftData(headers, rawRows) {
         row.forEach((cellContent, colIndex) => {
             // Include Col 1 (Day Name) now!
             if (colIndex === 0) return; // Skip only day num
-
-            // Removed strict COL_MAP check to allow overflow handling below
 
             // Special handling for Day Name (Col 1)
             if (colIndex === 1) {
@@ -108,10 +124,11 @@ function processShiftData(headers, rawRows) {
                 return;
             }
 
-            // Robust Column Mapping: Merge any column >= 16 into the "Ferie" slot (16)
+            // Robust Column Mapping: Merge any column >= lastIndex into the "Ferie" slot
+            const lastIndex = COL_MAP.length - 1;
             let effectiveIndex = colIndex;
-            if (colIndex >= 16) {
-                effectiveIndex = 16;
+            if (colIndex >= lastIndex) {
+                effectiveIndex = lastIndex;
             } else if (colIndex >= COL_MAP.length) {
                 return;
             }

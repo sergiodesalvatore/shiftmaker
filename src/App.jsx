@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Settings, BarChart3, Upload, X, Download, Archive } from 'lucide-react';
+import { Calendar, Settings, BarChart3, Upload, X, Download, Archive, Sparkles } from 'lucide-react';
 import Layout from './components/Layout';
 import FileUpload from './components/FileUpload';
 import ShiftBoard from './components/ShiftBoard';
@@ -8,34 +8,52 @@ import StatsTable from './components/StatsTable';
 import HistoryPanel from './components/HistoryPanel';
 import ExportPanel from './components/ExportPanel';
 import VacationPanel from './components/VacationPanel';
+import AutoPlannerPanel from './components/AutoPlannerPanel';
 import { parseShiftFile } from './utils/parser';
 import { KNOWN_PEOPLE } from './utils/constants';
+import { regenerateDayNames } from './utils/calendar';
 
-// Wrapper to manage shifts state at App level for sharing
 function AppContent({ initialData, onReset }) {
   const [shifts, setShifts] = useState(initialData.shifts);
   const [constraints, setConstraints] = useState(initialData.constraints || {});
   const [vacationData, setVacationData] = useState(initialData.vacationData || { requests: [], baseRequired: 5, exceptions: [] });
-  const [activeTab, setActiveTab] = useState('calendar'); // 'calendar', 'constraints', 'stats', 'vacations'
+  const [activeTab, setActiveTab] = useState('calendar'); // 'calendar', 'constraints', 'stats', 'vacations', 'autoplanner'
+
+  const [month, setMonth] = useState(() => {
+    if (initialData.month) return parseInt(initialData.month);
+    const currentDate = new Date();
+    let defaultMonth = currentDate.getMonth() + 2; 
+    if (defaultMonth > 12) defaultMonth = 1;
+    return defaultMonth;
+  });
+
+  const [year, setYear] = useState(() => {
+    if (initialData.year) return parseInt(initialData.year);
+    const currentDate = new Date();
+    let defaultMonth = currentDate.getMonth() + 2; 
+    let defaultYear = currentDate.getFullYear();
+    if (defaultMonth > 12) defaultYear += 1;
+    return defaultYear;
+  });
+
+  React.useEffect(() => {
+    const hasDayNames = shifts.some(s => s.type === 'DAY_NAME');
+    if (!hasDayNames && shifts.length === 0) {
+      setShifts(regenerateDayNames(year, month, []));
+    }
+  }, []);
 
   // Extract unique days for constraints panel
   const uniqueDays = React.useMemo(() => {
-    const days = new Map();
-    shifts.forEach(s => {
-      if (s.rawColumnIndex === 0 || s.rawColumnIndex === 1) { // num or name
-        // Simple extraction, assuming sorted by parser
-        const num = parseInt(s.day);
-        if (!isNaN(num)) {
-          if (!days.has(num)) {
-            // Find day name
-            const nameShift = shifts.find(x => x.day === s.day && x.type === 'DAY_NAME');
-            days.set(num, { num, name: nameShift ? nameShift.content : '' });
-          }
-        }
-      }
-    });
-    return Array.from(days.values()).sort((a, b) => a.num - b.num);
-  }, [shifts]);
+    const daysInMonth = new Date(year, month, 0).getDate();
+    const list = [];
+    for (let d = 1; d <= daysInMonth; d++) {
+      const dateObj = new Date(year, month - 1, d);
+      const dayName = dateObj.toLocaleDateString('it-IT', { weekday: 'short' }).toUpperCase().replace('.', '');
+      list.push({ num: d, name: dayName });
+    }
+    return list;
+  }, [year, month]);
 
   const handleConstraintsUpdate = (person, newConstraints) => {
     setConstraints(prev => ({
@@ -50,6 +68,8 @@ function AppContent({ initialData, onReset }) {
       people: initialData.people,
       constraints,
       vacationData,
+      month,
+      year,
       timestamp: new Date().toISOString(),
       type: 'SHIFTMAKER_SESSION'
     };
@@ -70,9 +90,37 @@ function AppContent({ initialData, onReset }) {
       {/* Header */}
       <header className="app-header">
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-          <h1 style={{ fontSize: '1.25rem', color: 'var(--sys-color-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <h1 style={{ fontSize: '1.25rem', color: 'var(--sys-color-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem', margin: 0 }}>
             ShiftMaker
           </h1>
+
+          <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+            <select 
+              value={month} 
+              onChange={e => {
+                const newMonth = parseInt(e.target.value);
+                setMonth(newMonth);
+                setShifts(prev => regenerateDayNames(year, newMonth, prev));
+              }}
+              className="input-base"
+              style={{ padding: '4px 8px', fontSize: '0.9rem', width: 'auto', background: 'white' }}
+            >
+              {['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'].map((m, i) => (
+                <option key={i} value={i + 1}>{m}</option>
+              ))}
+            </select>
+            <input 
+              type="number" 
+              value={year} 
+              onChange={e => {
+                const newYear = parseInt(e.target.value);
+                setYear(newYear);
+                setShifts(prev => regenerateDayNames(newYear, month, prev));
+              }}
+              className="input-base"
+              style={{ padding: '4px 8px', fontSize: '0.9rem', width: '80px', background: 'white' }}
+            />
+          </div>
 
           <nav className="nav-tabs">
             <button
@@ -81,6 +129,13 @@ function AppContent({ initialData, onReset }) {
             >
               <Calendar size={18} />
               Calendario
+            </button>
+            <button
+              className={`nav-tab ${activeTab === 'autoplanner' ? 'active' : ''}`}
+              onClick={() => setActiveTab('autoplanner')}
+            >
+              <Sparkles size={18} />
+              Auto-Planner
             </button>
             <button
               className={`nav-tab ${activeTab === 'constraints' ? 'active' : ''}`}
@@ -141,6 +196,25 @@ function AppContent({ initialData, onReset }) {
               onReset={onReset}
               onShiftsChange={setShifts}
               constraints={constraints}
+              month={month}
+              year={year}
+            />
+          </div>
+        )}
+
+        {activeTab === 'autoplanner' && (
+          <div className="card">
+            <AutoPlannerPanel
+              people={initialData.people}
+              shifts={shifts}
+              constraints={constraints}
+              vacationData={vacationData}
+              month={month}
+              year={year}
+              onSaveGenerated={(newShifts) => {
+                setShifts(newShifts);
+                setActiveTab('calendar');
+              }}
             />
           </div>
         )}
@@ -158,7 +232,7 @@ function AppContent({ initialData, onReset }) {
 
         {activeTab === 'stats' && (
           <div className="card">
-            <StatsTable shifts={shifts} />
+            <StatsTable shifts={shifts} year={year} month={month} />
           </div>
         )}
 
@@ -186,6 +260,29 @@ function AppContent({ initialData, onReset }) {
       </main>
     </div>
   );
+}
+
+function extractMonthYearFromFilename(filename) {
+  const months = [
+    "gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno",
+    "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"
+  ];
+  const name = filename.toLowerCase();
+  let foundMonth = null;
+  let foundYear = null;
+  
+  months.forEach((m, idx) => {
+    if (name.includes(m)) {
+      foundMonth = idx + 1;
+    }
+  });
+  
+  const yearMatch = name.match(/\b(20\d{2})\b/);
+  if (yearMatch) {
+    foundYear = parseInt(yearMatch[1]);
+  }
+  
+  return { month: foundMonth, year: foundYear };
 }
 
 function App() {
@@ -225,7 +322,10 @@ function App() {
         return;
       }
 
+      const guessed = extractMonthYearFromFilename(file.name);
       const parsedData = await parseShiftFile(file);
+      if (guessed.month) parsedData.month = guessed.month;
+      if (guessed.year) parsedData.year = guessed.year;
       setData(parsedData);
     } catch (error) {
       console.error(error);

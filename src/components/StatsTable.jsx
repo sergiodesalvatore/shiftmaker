@@ -1,7 +1,44 @@
 import React, { useMemo } from 'react';
 import { KNOWN_PEOPLE } from '../utils/constants';
+import { getWeeksOfMonth, getShiftHours } from '../utils/calendar';
 
-export default function StatsTable({ shifts }) {
+const getActualShiftType = (s, isNewGuardSystem) => {
+    const knownTypes = [
+        'AMBULATORIO_08-14', 'AMBULATORIO_14-19', 
+        'REPARTO_08-14', 'BALD_08-14', 
+        'DH_08-14', 'CONS_08-14', 
+        'SALA_OP_08-14', 'SALA_OP_14-19', 
+        'SALA_DS_08-14', 'NORA_08-14', 
+        'SM_08-14', 'PS_08-14', 
+        'GUARDIA_08-20', 'GUARDIA_NOTTE_20-08', 'REP_2', 'FERIE',
+        'PS_CONT_14-20'
+    ];
+    if (s.type && knownTypes.includes(s.type)) {
+        return s.type;
+    }
+    const idx = s.rawColumnIndex;
+    const types = {
+        2: 'AMBULATORIO_08-14', 3: 'AMBULATORIO_14-19',
+        4: 'REPARTO_08-14', 5: 'BALD_08-14',
+        6: 'DH_08-14', 7: 'CONS_08-14',
+        8: 'SALA_OP_08-14', 9: 'SALA_OP_14-19',
+        10: 'SALA_DS_08-14', 11: 'NORA_08-14',
+        12: 'SM_08-14', 13: 'PS_08-14'
+    };
+    if (isNewGuardSystem) {
+        types[14] = 'GUARDIA_08-20';
+        types[15] = 'GUARDIA_NOTTE_20-08';
+        types[16] = 'REP_2';
+        types[17] = 'FERIE';
+    } else {
+        types[14] = 'PS_CONT_14-20';
+        types[15] = 'REP_2';
+        types[16] = 'FERIE';
+    }
+    return types[idx] || 'GENERIC';
+};
+
+export default function StatsTable({ shifts, year, month }) {
     const stats = useMemo(() => {
         const personStats = {};
 
@@ -133,6 +170,46 @@ export default function StatsTable({ shifts }) {
         }
     };
 
+    const isNewGuardSystem = year >= 2027;
+
+    const weeklyHoursStats = useMemo(() => {
+        if (!year || !month) return null;
+        const weeks = getWeeksOfMonth(year, month);
+        const docWeeklyHours = {};
+
+        const allowedPeople = new Set(KNOWN_PEOPLE);
+        
+        KNOWN_PEOPLE.forEach(p => {
+            docWeeklyHours[p] = weeks.map(() => 0);
+        });
+
+        const shiftsByDay = {};
+        shifts.forEach(s => {
+            if (!shiftsByDay[s.day]) shiftsByDay[s.day] = [];
+            shiftsByDay[s.day].push(s);
+        });
+
+        weeks.forEach((weekDays, wIdx) => {
+            weekDays.forEach(d => {
+                const dayShifts = shiftsByDay[d] || [];
+                dayShifts.forEach(s => {
+                    if (!s.content) return;
+                    const tokens = s.content.toUpperCase().split(/[\s,]+/).map(t => t.trim()).filter(Boolean);
+                    tokens.forEach(p => {
+                        if (allowedPeople.has(p) && docWeeklyHours[p]) {
+                            docWeeklyHours[p][wIdx] += getShiftHours(getActualShiftType(s, isNewGuardSystem), isNewGuardSystem);
+                        }
+                    });
+                });
+            });
+        });
+
+        return {
+            weeks,
+            docWeeklyHours
+        };
+    }, [shifts, year, month]);
+
     return (
         <div style={{ padding: '0.5rem', overflowX: 'auto' }}>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--sys-color-on-surface)' }}>
@@ -172,6 +249,70 @@ export default function StatsTable({ shifts }) {
                     ))}
                 </tbody>
             </table>
+
+            {weeklyHoursStats && (
+                <div style={{ marginTop: '3rem', borderTop: '1px solid var(--sys-color-outline-variant)', paddingTop: '2rem' }}>
+                    <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.5rem', color: 'var(--sys-color-on-surface)' }}>
+                        Ore Lavorate Settimanali
+                    </h3>
+                    <p style={{ color: 'var(--sys-color-outline)', margin: '0 0 1.5rem 0', fontSize: '0.875rem' }}>
+                        Visualizzazione delle ore lavorate per ciascuna settimana del mese. Il limite contrattuale massimo è di <strong>36 ore</strong>.
+                    </p>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.875rem' }}>
+                        <thead>
+                            <tr>
+                                <th style={{ padding: '12px', borderBottom: '2px solid var(--sys-color-outline-variant)', textAlign: 'left', color: 'var(--sys-color-outline)', fontWeight: 600 }}>Medico</th>
+                                {weeklyHoursStats.weeks.map((week, idx) => (
+                                    <th key={idx} style={{ padding: '12px', borderBottom: '2px solid var(--sys-color-outline-variant)', textAlign: 'center', color: 'var(--sys-color-outline)', fontWeight: 600, fontSize: '0.75rem' }}>
+                                        Settimana {idx + 1}<br/>
+                                        <span style={{ fontSize: '0.65rem', fontWeight: 'normal', color: 'var(--sys-color-outline)' }}>
+                                            (gg {week[0]}-{week[week.length - 1]})
+                                        </span>
+                                    </th>
+                                ))}
+                                <th style={{ padding: '12px', borderBottom: '2px solid var(--sys-color-outline-variant)', textAlign: 'center', color: 'var(--sys-color-outline)', fontWeight: 600, fontSize: '0.75rem' }}>
+                                    Totale Mese
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {KNOWN_PEOPLE.sort().map((person, i) => {
+                                const weeklyHours = weeklyHoursStats.docWeeklyHours[person] || [];
+                                const totalMonthHours = weeklyHours.reduce((acc, h) => acc + h, 0);
+                                if (totalMonthHours === 0) return null; // Only show active doctors
+
+                                return (
+                                    <tr key={person} style={{ background: i % 2 === 0 ? 'transparent' : 'var(--sys-color-background)' }}>
+                                        <td style={{ padding: '12px', borderBottom: '1px solid var(--sys-color-outline-variant)', fontWeight: 'bold' }}>{person}</td>
+                                        {weeklyHours.map((hours, idx) => {
+                                            const isOverLimit = hours > 36;
+                                            return (
+                                                <td key={idx} style={{ padding: '12px', borderBottom: '1px solid var(--sys-color-outline-variant)', textAlign: 'center' }}>
+                                                    <span style={{
+                                                        padding: '2px 8px',
+                                                        borderRadius: '100px',
+                                                        fontWeight: '600',
+                                                        fontSize: '0.8125rem',
+                                                        display: 'inline-block',
+                                                        minWidth: '20px',
+                                                        backgroundColor: isOverLimit ? 'var(--sys-color-orange)' : 'transparent',
+                                                        color: isOverLimit ? 'white' : 'var(--sys-color-on-surface)'
+                                                    }}>
+                                                        {hours}h
+                                                    </span>
+                                                </td>
+                                            );
+                                        })}
+                                        <td style={{ padding: '12px', borderBottom: '1px solid var(--sys-color-outline-variant)', textAlign: 'center', fontWeight: 'bold', color: 'var(--sys-color-primary)' }}>
+                                            {totalMonthHours}h
+                                        </td>
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </table>
+                </div>
+            )}
         </div>
     );
 }
